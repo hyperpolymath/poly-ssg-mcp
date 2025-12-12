@@ -1,0 +1,214 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2025 Jonathan D.A. Jewell
+= polyglot-ssg-mcp
+:toc: macro
+:toclevels: 3
+:icons: font
+
+Unified MCP server for **28 static site generators** across **19 programming languages**.
+
+image:https://img.shields.io/badge/SSGs-28-blue[SSGs]
+image:https://img.shields.io/badge/Languages-19-green[Languages]
+image:https://img.shields.io/badge/License-MIT-yellow[License]
+image:https://img.shields.io/badge/RSR-Silver-silver[RSR Compliance]
+
+toc::[]
+
+== Overview
+
+polyglot-ssg-mcp provides a unified interface for static site generators across the programming language spectrum. No mainstream JS/Python/Ruby - this is for functional programming, systems languages, and academic tools.
+
+== Supported SSGs by Language
+
+[cols="2,3,4"]
+|===
+|Language |SSGs |Notes
+
+|**Rust**
+|Zola, Cobalt, mdBook
+|Fast, single-binary tools
+
+|**Elixir**
+|Serum, NimblePublisher, Tableau
+|BEAM ecosystem, Phoenix integration
+
+|**Haskell**
+|Hakyll, Ema
+|FP-native, Pandoc integration
+
+|**OCaml**
+|YOCaml
+|Composable, type-safe
+
+|**F#**
+|Fornax
+|.NET ecosystem, type providers
+
+|**Swift**
+|Publish
+|Apple ecosystem, SwiftUI-style API
+
+|**Common Lisp**
+|Coleslaw
+|Extensible, macro-powered
+
+|**Kotlin**
+|Orchid
+|JVM, documentation-focused
+
+|**Julia**
+|Franklin.jl, StaticWebPages.jl, Documenter.jl
+|Scientific/academic publishing
+
+|**Clojure**
+|Cryogen, Perun, Babashka
+|Data-driven, REPL workflow
+
+|**Scala**
+|Laika, ScalaTex
+|Multi-format output (HTML, PDF, EPUB)
+
+|**Erlang**
+|Zotonic
+|CMS with static export
+
+|**Racket**
+|Pollen, Frog
+|Publishing-focused, typesetting
+
+|**D**
+|Reggae
+|Systems programming build tool
+
+|**Tcl**
+|Wub
+|Web framework with static generation
+
+|**Crystal**
+|Marmot
+|Ruby-like syntax, compiled
+
+|**Nim**
+|Nimrod (nimib ecosystem)
+|Python-like, compiled
+|===
+
+== Quick Start
+
+[source,bash]
+----
+# Run with Deno
+deno task start
+
+# Or with container
+podman run -it ghcr.io/hyperpolymath/polyglot-ssg-mcp:latest
+----
+
+== Installation
+
+=== Deno (Recommended)
+
+[source,bash]
+----
+git clone https://github.com/hyperpolymath/polyglot-ssg-mcp
+cd polyglot-ssg-mcp
+deno task start
+----
+
+=== Container
+
+[source,bash]
+----
+# Wolfi (default)
+podman pull ghcr.io/hyperpolymath/polyglot-ssg-mcp:latest
+
+# Alpine variant
+podman pull ghcr.io/hyperpolymath/polyglot-ssg-mcp:alpine
+----
+
+== MCP Client Configuration
+
+=== Claude Desktop
+
+[source,json]
+----
+{
+  "mcpServers": {
+    "polyglot-ssg": {
+      "command": "deno",
+      "args": ["task", "start"],
+      "cwd": "/path/to/polyglot-ssg-mcp"
+    }
+  }
+}
+----
+
+== Tools
+
+=== Meta Tools
+
+|===
+|Tool |Description
+
+|`ssg_list`
+|List all SSGs with languages and status
+
+|`ssg_detect`
+|Auto-detect installed SSGs
+
+|`ssg_help`
+|Get help for a specific SSG
+
+|`ssg_version`
+|Server version info
+|===
+
+=== Per-SSG Tools
+
+Each SSG provides tools prefixed with its name. Common patterns:
+
+* `{ssg}_init` - Initialize new project
+* `{ssg}_build` - Build the site
+* `{ssg}_serve` - Start development server
+* `{ssg}_clean` - Clean build artifacts
+* `{ssg}_version` - Get SSG version
+
+== Environment Variables
+
+[source,bash]
+----
+# Override binary paths
+ZOLA_PATH=/custom/path/zola
+HAKYLL_PATH=/custom/path/hakyll
+# ... etc for each SSG
+----
+
+== Architecture
+
+[source]
+----
+polyglot-ssg-mcp/
+├── index.js              # Main MCP server
+├── adapters/             # 28 SSG adapters
+│   ├── zola.js           # Rust
+│   ├── hakyll.js         # Haskell
+│   ├── franklin.js       # Julia
+│   └── ...
+├── src/                  # ReScript source
+│   ├── Executor.res      # Type-safe execution
+│   └── Adapter.res       # Adapter interface
+└── Containerfile         # OCI container
+----
+
+== Related Projects
+
+* https://github.com/hyperpolymath/polyglot-db-mcp[polyglot-db-mcp] - Multi-database MCP
+* https://github.com/hyperpolymath/polyglot-container-mcp[polyglot-container-mcp] - Container runtime MCP
+
+== License
+
+MIT - See LICENSE.txt
+
+== Author
+
+Jonathan D.A. Jewell (@hyperpolymath)

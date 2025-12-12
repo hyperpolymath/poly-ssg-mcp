@@ -1,0 +1,23 @@
+# polyglot-ssg-mcp language attributes
+# ReScript is the PRIMARY language - TypeScript is PROHIBITED
+
+# ReScript files - PRIMARY
+*.res linguist-language=ReScript
+*.resi linguist-language=ReScript
+
+# JavaScript - allowed for adapters
+*.js linguist-language=JavaScript
+
+# TypeScript - PROHIBITED
+*.ts linguist-detectable=false
+*.tsx linguist-detectable=false
+
+# Documentation
+*.adoc linguist-documentation
+*.md linguist-documentation
+
+# Scheme metadata
+*.scm linguist-language=Scheme
+
+# Generated
+lib/** linguist-generated

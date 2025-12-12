@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# ReScript build output
+lib/
+.bsb.lock
+
+# Deno
+.deno/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/*.log
+
+# Environment
+.env
+.env.local

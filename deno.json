@@ -1,0 +1,23 @@
+{
+  "name": "@anthropic/polyglot-ssg-mcp",
+  "version": "1.0.0",
+  "exports": "./index.js",
+  "imports": {
+    "@anthropic-ai/sdk": "npm:@anthropic-ai/sdk@^0.39.0",
+    "@modelcontextprotocol/sdk/server/mcp.js": "npm:@modelcontextprotocol/sdk@1.0.0/server/mcp.js",
+    "@modelcontextprotocol/sdk/server/stdio.js": "npm:@modelcontextprotocol/sdk@1.0.0/server/stdio.js"
+  },
+  "tasks": {
+    "start": "deno run --allow-run --allow-read --allow-write --allow-env index.js",
+    "dev": "deno run --watch --allow-run --allow-read --allow-write --allow-env index.js",
+    "check": "deno check index.js",
+    "lint": "deno lint --ignore=node_modules,lib",
+    "fmt": "deno fmt --ignore=node_modules,lib",
+    "res:build": "npx rescript build",
+    "res:watch": "npx rescript build -w",
+    "res:clean": "npx rescript clean"
+  },
+  "compilerOptions": {
+    "lib": ["deno.ns", "deno.unstable"]
+  }
+}
