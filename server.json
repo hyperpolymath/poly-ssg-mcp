@@ -1,60 +1,20 @@
 {
-  "name": "polyglot-ssg-mcp",
-  "version": "1.0.0",
-  "description": "Unified MCP server for 28 static site generators across 19 programming languages",
-  "author": "Jonathan D.A. Jewell",
-  "license": "MIT",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.hyperpolymath/poly-ssg-mcp",
+  "title": "Polyglot Static Site Generator MCP",
+  "description": "Unified MCP server for 28 static site generators across 17 languages. Supports Zola, Hakyll, Cobalt, YOCaml, Serum, Franklin.jl, Cryogen, Laika, Pollen, and more.",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/hyperpolymath/polyglot-ssg-mcp"
+    "url": "https://github.com/hyperpolymath/poly-ssg-mcp",
+    "source": "github"
   },
-  "homepage": "https://github.com/hyperpolymath/polyglot-ssg-mcp",
-  "bugs": {
-    "url": "https://github.com/hyperpolymath/polyglot-ssg-mcp/issues"
-  },
-  "keywords": [
-    "mcp",
-    "mcp-server",
-    "static-site-generator",
-    "ssg",
-    "zola",
-    "hakyll",
-    "serum",
-    "franklin",
-    "polyglot",
-    "deno",
-    "rescript"
-  ],
-  "mcp": {
-    "protocol": "stdio",
-    "runtime": "deno",
-    "tools": 150,
-    "adapters": 28,
-    "languages": 19
-  },
-  "categories": [
-    "development",
-    "documentation",
-    "static-site",
-    "polyglot"
-  ],
-  "ssgs": {
-    "rust": ["zola", "cobalt", "mdbook"],
-    "elixir": ["serum", "nimble-publisher", "tableau"],
-    "haskell": ["hakyll", "ema"],
-    "ocaml": ["yocaml"],
-    "fsharp": ["fornax"],
-    "swift": ["publish"],
-    "common-lisp": ["coleslaw"],
-    "kotlin": ["orchid"],
-    "julia": ["franklin", "staticwebpages", "documenter"],
-    "clojure": ["cryogen", "perun", "babashka"],
-    "scala": ["laika", "scalatex"],
-    "erlang": ["zotonic"],
-    "racket": ["pollen", "frog"],
-    "d": ["reggae"],
-    "tcl": ["wub"],
-    "crystal": ["marmot"],
-    "nim": ["nimrod"]
-  }
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/hyperpolymath/poly-ssg-mcp:main",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
 }

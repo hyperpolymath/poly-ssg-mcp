@@ -9,6 +9,7 @@ LABEL org.opencontainers.image.description="Unified MCP server for 28 static sit
 LABEL org.opencontainers.image.authors="Jonathan D.A. Jewell"
 LABEL org.opencontainers.image.source="https://github.com/hyperpolymath/polyglot-ssg-mcp"
 LABEL org.opencontainers.image.licenses="MIT"
+LABEL io.modelcontextprotocol.server.name="io.github.hyperpolymath/poly-ssg-mcp"
 
 # Install Deno
 RUN apk add --no-cache deno
