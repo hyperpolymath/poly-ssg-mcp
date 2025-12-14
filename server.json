@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.hyperpolymath/poly-ssg-mcp",
   "title": "Polyglot SSG MCP",
-  "description": "Unified MCP server for 28 static site generators across 19 languages: Zola, Hakyll, YOCaml, Serum, Publish, Franklin.jl, Cryogen, Laika, Pollen, and more.",
+  "description": "Unified MCP for 28 static site generators across 19 languages: Zola, Hakyll, and more",
   "repository": {
     "url": "https://github.com/hyperpolymath/poly-ssg-mcp",
     "source": "github"
