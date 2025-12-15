@@ -1,42 +1,24 @@
-;; SPDX-License-Identifier: MIT
+;; SPDX-License-Identifier: AGPL-3.0-or-later
 ;; SPDX-FileCopyrightText: 2025 Jonathan D.A. Jewell
+;;; META.scm — poly-ssg-mcp
 
-;; META.scm — Architectural Decisions and Development Practices
-;; polyglot-ssg-mcp
-
-(define-module (polyglot-ssg-mcp meta)
-  #:export (architecture-decisions))
+(define-module (poly-ssg-mcp meta)
+  #:export (architecture-decisions development-practices design-rationale))
 
 (define architecture-decisions
-  '((design-philosophy
-     (polyglot . "Support SSGs from 19+ programming languages")
-     (foss-first . "Prioritize FOSS tools over proprietary")
-     (no-mainstream . "Exclude mainstream JS/Python/Ruby SSGs")
-     (functional-focus . "Emphasize FP languages: Haskell, OCaml, Racket, etc."))
+  '((adr-001
+     (title . "RSR Compliance")
+     (status . "accepted")
+     (date . "2025-12-15")
+     (context . "// SPDX-License-Identifier: MIT")
+     (decision . "Follow Rhodium Standard Repository guidelines")
+     (consequences . ("RSR Gold target" "SHA-pinned actions" "SPDX headers" "Multi-platform CI")))))
 
-    (language-selection-criteria
-     (included . ("Functional programming languages"
-                  "Systems programming languages"
-                  "Academic/research languages"
-                  "Lisp family languages"
-                  "ML family languages"))
-     (excluded . ("JavaScript frameworks (Hugo, Eleventy, Astro)"
-                  "Python SSGs (Pelican, MkDocs)"
-                  "Ruby SSGs (Jekyll, Bridgetown)"
-                  "PHP generators")))
+(define development-practices
+  '((code-style (languages . ("Dockerfile" "JavaScript" "Just" "ReScript" "Scheme" "Shell")) (formatter . "auto-detect") (linter . "auto-detect"))
+    (security (sast . "CodeQL") (credentials . "env vars only"))
+    (testing (coverage-minimum . 70))
+    (versioning (scheme . "SemVer 2.0.0"))))
 
-    (adapter-pattern
-     (rationale . "Each SSG has unique CLI and workflow")
-     (interface . ("name" "language" "description" "connect" "disconnect" "isConnected" "tools"))
-     (tool-naming . "{ssg}_{action} e.g., zola_build, hakyll_watch"))
-
-    (security-model
-     (execution . "Deno.Command (no shell)")
-     (commands . "Whitelist approach")
-     (arguments . "Sanitization before execution")
-     (permissions . "--allow-run --allow-read --allow-write --allow-env"))
-
-    (type-safety
-     (core . "ReScript for Executor and Adapter interfaces")
-     (adapters . "JavaScript for SSG-specific implementations")
-     (rationale . "Balance type safety with adapter flexibility"))))
+(define design-rationale
+  '((why-rsr "RSR ensures consistency, security, and maintainability.")))
