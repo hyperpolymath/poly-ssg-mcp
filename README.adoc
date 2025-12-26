@@ -69,6 +69,14 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Casket, Ema, Hakyll
 |FP-native, Pandoc integration
 
+|**Janus**
+|Liminal
+|
+
+|**J**
+|Jura
+|
+
 |**Julia**
 |Documenter.jl, Franklin.jl, StaticWebPages.jl
 |Scientific/academic publishing
