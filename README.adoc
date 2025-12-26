@@ -25,6 +25,14 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |===
 |Language |SSGs |Notes
 
+|**Agda**
+|QED
+|
+
+|**Algol**
+|60
+|
+
 |**Arrow**
 |Undo
 |
@@ -40,6 +48,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |**Clojure**
 |Babashka, Cryogen, Perun
 |Data-driven, REPL workflow
+
+|**COBOL**
+|DivisionOne
+|
 
 |**Common Lisp**
 |Coleslaw
@@ -101,6 +113,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Orchid
 |JVM, documentation-focused
 
+|**Mojo**
+|Canvas
+|
+
 |**Must**
 |Ultimatum
 |
@@ -117,6 +133,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Macrauchenia, YOCaml
 |Composable, type-safe
 
+|**QPL**
+|CPT
+|
+
 |**Racket**
 |Frog, Pollen
 |Publishing-focused, typesetting
@@ -132,6 +152,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |**Scala**
 |Laika, ScalaTex
 |Multi-format output (HTML, PDF, EPUB)
+
+|**SciLab**
+|LabNote
+|
 
 |**Swift**
 |Publish
