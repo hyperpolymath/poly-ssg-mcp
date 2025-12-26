@@ -33,8 +33,16 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |60
 |
 
+|**APL**
+|Iota
+|
+
 |**Arrow**
 |Undo
+|
+
+|**Bash**
+|Chicxulub
 |
 
 |**Betlang**
@@ -114,7 +122,7 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |JVM, documentation-focused
 
 |**Mojo**
-|Canvas
+|Easel
 |
 
 |**Must**
@@ -132,6 +140,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |**OCaml**
 |Macrauchenia, YOCaml
 |Composable, type-safe
+
+|**Odin**
+|Gungir
+|
 
 |**QPL**
 |CPT
@@ -157,6 +169,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |LabNote
 |
 
+|**StandardML**
+|Canon
+|
+
 |**Swift**
 |Publish
 |Apple ecosystem, SwiftUI-style API
@@ -167,6 +183,27 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**WASM (WAT)**
 |Wagasm
+|
+
+SPECIAL CASE
+
+|**RISC-V**
+|Baremetal
+|
+
+
+|**+ +**
+|Tiamat
+|
+
+
+|**+ +**
+|Reliquay
+|
+
+
+|** + + **
+|Tripos
 |
 
 |===
