@@ -29,6 +29,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Undo
 |
 
+|**Betlang**
+|Odd
+|
+
 |**Clojure**
 |Babashka, Cryogen, Perun
 |Data-driven, REPL workflow
@@ -89,10 +93,6 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Macrauchenia, YOCaml
 |Composable, type-safe
 
-|**Betlang**
-|Odd
-|
-
 |**Racket**
 |Frog, Pollen
 |Publishing-focused, typesetting
@@ -112,6 +112,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |**Tcl**
 |Wub
 |Web framework with static generation
+
+|**WASM (WAT)**
+|Wagasm
+|
 
 |===
 
