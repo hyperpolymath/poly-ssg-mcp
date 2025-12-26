@@ -77,7 +77,6 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Casket, Ema, Hakyll
 |FP-native, Pandoc integration
 
-
 |**Idris2**
 |Ddraig
 |
@@ -102,6 +101,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Orchid
 |JVM, documentation-focused
 
+|**Must**
+|Ultimatum
+|
+
 |**My**
 |My-ssg
 |
@@ -117,6 +120,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |**Racket**
 |Frog, Pollen
 |Publishing-focused, typesetting
+
+|**Raft**
+|Consensus
+|
 
 |**Rust**
 |Cobalt, mdBook, Zola
