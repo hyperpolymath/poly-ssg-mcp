@@ -5,12 +5,12 @@
 :toclevels: 3
 :icons: font
 
-Unified MCP server for **28 static site generators** across **19 programming languages**.
+Unified MCP server for **60+ static site generators** across **50+ programming languages**.
 
 image:https://img.shields.io/badge/RSR-compliant-gold[RSR Compliant,link=https://github.com/hyperpolymath/rhodium-standard-repositories]
 image:https://img.shields.io/badge/MCP-server-blue[MCP Server,link=https://github.com/modelcontextprotocol]
-image:https://img.shields.io/badge/SSGs-28-blue[SSGs]
-image:https://img.shields.io/badge/Languages-19-green[Languages]
+image:https://img.shields.io/badge/SSGs-60+-blue[SSGs]
+image:https://img.shields.io/badge/Languages-50+-green[Languages]
 image:https://img.shields.io/badge/license-MIT-green[License]
 
 toc::[]
@@ -26,36 +26,36 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Language |SSGs |Notes
 
 |**Ada/SPARK**
-|Anvil
-|
+|Anvil, Noteg
+|Safety-critical, contract-based design
 
 |**Agda**
 |QED
-|
+|Dependently-typed proofs
 
 |**Algol**
 |60
-|
+|Historical language revival
 
 |**APL**
 |Iota
-|
+|Array-based notation
 
 |**Arrow**
 |Undo
-|
+|Reversible computation
 
 |**Bash**
 |Chicxulub
-|
+|Shell-native scripting
 
 |**Betlang**
 |Odd
-|
+|Betting-inspired DSL
 
 |**Chapel**
 |Parallax
-|
+|Parallel computing, HPC-focused
 
 |**Clojure**
 |Babashka, Cryogen, Perun
@@ -63,7 +63,7 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**COBOL**
 |DivisionOne
-|
+|Enterprise legacy, structured divisions
 
 |**Common Lisp**
 |Coleslaw
@@ -73,9 +73,13 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Marmot
 |Ruby-like syntax, compiled
 
+|**COW**
+|Milk
+|Esoteric, moo-based commands
+
 |**Curry**
 |Vindaloo
-|
+|Functional-logic programming
 
 |**D**
 |Reggae
@@ -83,11 +87,11 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Deno**
 |Saur
-|
+|Secure runtime, TypeScript-first
 
 |**Eclexia**
 |Pareto
-|
+|80/20 principle optimization
 
 |**Elixir**
 |NimblePublisher, Serum, Tableau
@@ -99,7 +103,7 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Forth**
 |Estate
-|
+|Stack-based minimalism
 
 |**F#**
 |Fornax
@@ -108,7 +112,11 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Factor**
 |Warp
-|
+|Concatenative, stack-based
+
+|**Gleam**
+|Sparkle
+|Type-safe, BEAM ecosystem
 
 |**Haskell**
 |Casket, Ema, Hakyll
@@ -116,23 +124,23 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Idris2**
 |Ddraig
-|
+|Dependent types, verified code
 
 |**Janus**
 |Liminal
-|
+|Reversible programming
 
 |**J**
 |Jura
-|
+|Array programming, APL descendant
 
 |**Julia**
 |Documenter.jl, Franklin.jl, StaticWebPages.jl
 |Scientific/academic publishing
 
 |**Just**
-|Praxis
-|
+|Praxis, Reliquary, Tiamat, Tripos
+|Task runner, build automation
 
 |**Kotlin**
 |Orchid
@@ -140,23 +148,31 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Life**
 |Hackenbush
-| Conways Game of Life, turing-complete language
+|Conway's Game of Life, Turing-complete
+
+|**Logo**
+|Terrapin
+|Educational, turtle graphics
 
 |**Malbolge**
 |Bolgia
-|
+|Esoteric, intentionally difficult
 
 |**Mojo**
 |Easel
-|
+|Python-like, AI/ML focused
 
 |**Must**
 |Ultimatum
-|
+|Constraint-based programming
 
 |**My**
 |My-ssg
-|
+|Personal/experimental language
+
+|**Oblibeny**
+|Obli
+|Privacy-preserving, pattern-hiding
 
 |**Nim**
 |Nimrod (nimib ecosystem), Rats
@@ -168,11 +184,23 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Odin**
 |Gungir
-|
+|Systems programming, C alternative
+
+|**Pharo**
+|Pharos
+|Live image, Smalltalk descendant
+
+|**Pony**
+|Eclipse
+|Actor-model, capabilities-secure
+
+|**Prolog**
+|Prodigy
+|Logic-based, declarative inference
 
 |**QPL**
 |CPT
-|
+|Quantum programming language
 
 |**Racket**
 |Frog, Pollen
@@ -180,15 +208,23 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**Raft**
 |Consensus
-|
+|Distributed systems protocol
 
 |**RED**
 |REDShift
-|
+|Full-stack, Rebol descendant
 
-|**Rescript**
+|**REXX**
+|Tyrano
+|Scripting, mainframe heritage
+
+|**Ring**
+|Orbital
+|Multi-paradigm, lightweight
+
+|**ReScript**
 |Rescribe
-|
+|Type-safe JavaScript compilation
 
 |**Rust**
 |Cobalt, mdBook, Zola
@@ -200,11 +236,11 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**SciLab**
 |LabNote
-|
+|Scientific computing, MATLAB-like
 
 |**StandardML**
 |Canon
-|
+|Academic ML dialect
 
 |**Swift**
 |Publish
@@ -216,36 +252,29 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 
 |**WASM (WAT)**
 |Wagasm
-|
+|WebAssembly text format
+
+|**WokeLang**
+|Dei
+|Consent-aware, ethical computing
 
 |**Z**
 |Region
-|
+|Formal specification language
 
-SPECIAL CASE
+|**Zig**
+|Zigzag
+|Zero-overhead, compile-time
+
+3+|*SPECIAL CASES*
 
 |**AQL**
 |Avocado
-|
+|ArangoDB Query Language
 
 |**RISC-V**
 |Baremetal
-|
-
-
-|**+ +**
-|Tiamat
-|
-
-
-|**+ +**
-|Reliquay
-|
-
-
-|** + + **
-|Tripos
-|
+|Assembly, embedded systems
 
 |===
 
