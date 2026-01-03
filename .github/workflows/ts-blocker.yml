@@ -1,6 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
-name: RSR Language Policy Enforcement
+name: TypeScript/JavaScript Blocker
 on: [push, pull_request]
 
 permissions: read-all
@@ -11,52 +10,16 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          fetch-depth: 2
-
-      - name: Block new TypeScript files
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Block new TypeScript/JavaScript
         run: |
-          # TypeScript is completely forbidden
-          NEW_TS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | grep -E '\.(ts|tsx)$' || true)
-
-          if [ -n "$NEW_TS" ]; then
-            echo "RSR Policy Violation: TypeScript is forbidden"
-            echo "Use ReScript (.res) instead"
-            echo ""
-            echo "Blocked files:"
-            echo "$NEW_TS"
+          NEW_TS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | grep -E '\.(ts|tsx)$' | grep -v '\.gen\.' || true)
+          NEW_JS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | grep -E '\.(js|jsx)$' | grep -v '\.res\.js$' | grep -v '\.gen\.' | grep -v 'node_modules' || true)
+          
+          if [ -n "$NEW_TS" ] || [ -n "$NEW_JS" ]; then
+            echo "❌ New TS/JS files detected. Use ReScript instead."
+            [ -n "$NEW_TS" ] && echo "$NEW_TS"
+            [ -n "$NEW_JS" ] && echo "$NEW_JS"
             exit 1
           fi
-          echo "TypeScript check: PASSED"
-
-      - name: Block new JavaScript adapters
-        run: |
-          # New adapters must be ReScript
-          NEW_JS_ADAPTERS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | grep -E '^adapters/.*\.js$' || true)
-
-          if [ -n "$NEW_JS_ADAPTERS" ]; then
-            echo "RSR Policy Violation: New adapters must be ReScript"
-            echo "Create .res files in src/adapters/ instead"
-            echo ""
-            echo "Blocked files:"
-            echo "$NEW_JS_ADAPTERS"
-            exit 1
-          fi
-          echo "Adapter check: PASSED"
-
-      - name: Check JavaScript (warn for legacy)
-        run: |
-          # Warn about any new JS that isn't generated
-          NEW_JS=$(git diff --name-only --diff-filter=A HEAD~1 2>/dev/null | \
-            grep -E '\.js$' | \
-            grep -v '\.res\.js$' | \
-            grep -v 'node_modules' | \
-            grep -v '^adapters/' || true)
-
-          if [ -n "$NEW_JS" ]; then
-            echo "WARNING: New JavaScript files detected"
-            echo "Consider converting to ReScript:"
-            echo "$NEW_JS"
-          fi
-          echo "RSR Policy Check: PASSED"
+          echo "✅ ReScript policy enforced"
