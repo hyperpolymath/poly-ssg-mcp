@@ -49,6 +49,10 @@ polyglot-ssg-mcp provides a unified interface for static site generators across 
 |Chicxulub
 |Shell-native scripting
 
+|**Befunge-93**
+|Befunge
+|2D stack-based esoteric language
+
 |**Betlang**
 |Odd
 |Betting-inspired DSL

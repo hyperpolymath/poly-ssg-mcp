@@ -39,6 +39,10 @@
       (url "https://github.com/hyperpolymath/baremetal-ssg"))
 
     (satellite
+      (name "befunge-ssg")
+      (url "https://github.com/hyperpolymath/befunge-ssg"))
+
+    (satellite
       (name "casket-ssg")
       (url "https://github.com/hyperpolymath/casket-ssg"))
 
