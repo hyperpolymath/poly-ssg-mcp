@@ -245,17 +245,99 @@ let startHttpMode = async (adapters: array<adapterModule>) => {
 // Entry Point
 // ============================================================================
 
-// This would be called from the compiled main.js
-// For now, adapters need to be loaded dynamically at runtime
+// List of all adapter module paths (relative to compiled output)
+let adapterModules = [
+  "./adapters/Babashka.res.js",
+  "./adapters/Cobalt.res.js",
+  "./adapters/Coleslaw.res.js",
+  "./adapters/Corral.res.js",
+  "./adapters/Cryogen.res.js",
+  "./adapters/Documenter.res.js",
+  "./adapters/Ema.res.js",
+  "./adapters/Fornax.res.js",
+  "./adapters/Franklin.res.js",
+  "./adapters/Frog.res.js",
+  "./adapters/Hakyll.res.js",
+  "./adapters/Laika.res.js",
+  "./adapters/Marmot.res.js",
+  "./adapters/MdBook.res.js",
+  "./adapters/NimblePublisher.res.js",
+  "./adapters/Nimrod.res.js",
+  "./adapters/Orchid.res.js",
+  "./adapters/Perun.res.js",
+  "./adapters/Pollen.res.js",
+  "./adapters/Publish.res.js",
+  "./adapters/Reggae.res.js",
+  "./adapters/ScalaTex.res.js",
+  "./adapters/Serum.res.js",
+  "./adapters/StaticWebPages.res.js",
+  "./adapters/Tableau.res.js",
+  "./adapters/Wub.res.js",
+  "./adapters/YOCaml.res.js",
+  "./adapters/Zola.res.js",
+  "./adapters/Zotonic.res.js",
+]
+
+// Dynamically import all adapter modules
+let loadAdapters = async () => {
+  let adapters: array<adapterModule> = []
+
+  await Array.forEachAsync(adapterModules, async (path) => {
+    try {
+      let mod = await import_(path)
+      let adapter: adapterModule = {
+        name: Obj.magic(mod)["name"],
+        language: Obj.magic(mod)["language"],
+        description: Obj.magic(mod)["description"],
+        connect: Obj.magic(mod)["connect"],
+        disconnect: Obj.magic(mod)["disconnect"],
+        isConnected: Obj.magic(mod)["isConnected"],
+        tools: Obj.magic(mod)["tools"],
+      }
+      Array.push(adapters, adapter)
+    } catch {
+    | error => {
+        Console.error("Failed to load adapter: " ++ path)
+        Console.error(error)
+      }
+    }
+  })
+
+  adapters
+}
+
+// Detect if running in Deno Deploy (HTTP mode) or local (STDIO mode)
+let isDenoDeployEnv = () => {
+  switch Deno.Env.get("DENO_DEPLOYMENT_ID") {
+  | Some(_) => true
+  | None =>
+    switch Deno.Env.get("HTTP_MODE") {
+    | Some("true") | Some("1") => true
+    | _ => false
+    }
+  }
+}
 
 let main = async () => {
-  // Adapters will be imported from compiled ES6 modules
-  // In the actual runtime, these would be dynamically loaded
   Console.error("polyglot-ssg-mcp starting...")
 
-  // For now, return a placeholder - the actual implementation
-  // will import adapters from lib/es6/src/adapters/*.res.js
-  ()
+  // Load all adapters
+  let adapters = await loadAdapters()
+  Console.error("Loaded " ++ Int.toString(Array.length(adapters)) ++ " SSG adapters")
+
+  if Array.length(adapters) == 0 {
+    Console.error("Warning: No adapters loaded. Check adapter module paths.")
+  }
+
+  // Create the server
+  let server = createServer(adapters)
+
+  // Start in appropriate mode
+  if isDenoDeployEnv() {
+    await startHttpMode(adapters)
+  } else {
+    await startStdioMode(server, adapters)
+  }
 }
 
 let _ = main()
