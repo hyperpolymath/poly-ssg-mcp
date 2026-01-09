@@ -15,14 +15,15 @@ LABEL io.modelcontextprotocol.server.name="io.github.hyperpolymath/poly-ssg-mcp"
 
 WORKDIR /app
 
-# Copy source files
-COPY index.js deno.json ./
-COPY adapters/ ./adapters/
-# src/ contains ReScript source (optional)
+# Copy compiled ReScript output and source files
+COPY main.js index.js server.js deno.json ./
+COPY lib/ ./lib/
+COPY transport/ ./transport/
+# src/ contains ReScript source (optional, for debugging)
 COPY src/ ./src/
 
 # Cache dependencies using deno.json config
-RUN deno cache --config=deno.json index.js
+RUN deno cache --config=deno.json main.js
 
 # Create non-root user
 RUN addgroup --system polyglot && adduser --system --ingroup polyglot polyglot
@@ -33,4 +34,4 @@ USER polyglot
 EXPOSE 3000
 
 # Default entrypoint using deno.json config
-ENTRYPOINT ["deno", "run", "--config=deno.json", "--allow-run", "--allow-read", "--allow-write", "--allow-env", "index.js"]
+ENTRYPOINT ["deno", "run", "--config=deno.json", "--allow-run", "--allow-read", "--allow-write", "--allow-env", "--allow-net", "main.js"]
