@@ -269,56 +269,56 @@
       (features "pure WAT, memory operations, host imports")))
 
   ;; ============================================================================
-  ;; ARCHIVED (merged or discontinued)
+  ;; EXPERIMENTAL (novel approaches requiring research)
   ;; ============================================================================
-  (archived
+  (experimental
     (satellite
       (name "noteg-ssg")
       (url "https://github.com/hyperpolymath/noteg-ssg")
-      (status "archived")
-      (reason "Merged into anvil-ssg"))
+      (status "experimental")
+      (note "Dual-mode architecture with anvil-ssg"))
 
     (satellite
       (name "60-ssg")
       (url "https://github.com/hyperpolymath/60-ssg")
-      (status "archived")
-      (reason "Impractical - time constraint concept"))
+      (status "experimental")
+      (features "time-constrained builds, deadline-aware rendering"))
 
     (satellite
       (name "consensus-ssg")
       (url "https://github.com/hyperpolymath/consensus-ssg")
-      (status "archived")
-      (reason "Impractical - requires distributed network"))
+      (status "experimental")
+      (features "distributed consensus, multi-node validation"))
 
     (satellite
       (name "cpt-ssg")
       (url "https://github.com/hyperpolymath/cpt-ssg")
-      (status "archived")
-      (reason "Impractical - requires neural network"))
+      (status "experimental")
+      (features "neural template generation, ML-assisted layouts"))
 
     (satellite
       (name "easel-ssg")
       (url "https://github.com/hyperpolymath/easel-ssg")
-      (status "archived")
-      (reason "Impractical - visual-only concept"))
+      (status "experimental")
+      (features "visual canvas editing, drag-drop composition"))
 
     (satellite
       (name "liminal-ssg")
       (url "https://github.com/hyperpolymath/liminal-ssg")
-      (status "archived")
-      (reason "Impractical - abstract concept"))
+      (status "experimental")
+      (features "transitional states, metamorphic templates"))
 
     (satellite
       (name "region-ssg")
       (url "https://github.com/hyperpolymath/region-ssg")
-      (status "archived")
-      (reason "Impractical - no clear technical foundation"))
+      (status "experimental")
+      (features "geographic content adaptation, locale-aware builds"))
 
     (satellite
       (name "undo-ssg")
       (url "https://github.com/hyperpolymath/undo-ssg")
-      (status "archived")
-      (reason "Impractical - conceptual only")))
+      (status "experimental")
+      (features "version-aware builds, temporal navigation")))
 
   ;; ============================================================================
   ;; STATISTICS (Updated 2025-01-18)
@@ -326,8 +326,8 @@
   (statistics
     (implemented-count 31)  ;; 11 original + 20 new
     (theme-integration-count 3)
+    (experimental-count 8)  ;; Novel approaches requiring research
     (pending-count 0)
-    (archived-count 8)
     (total-satellites 42)
     (languages-represented 31))
 
