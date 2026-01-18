@@ -5,7 +5,7 @@
 ;; This file defines all satellite repositories that orbit the poly-ssg-mcp hub.
 ;; Satellites are SSG project implementations that use the unified MCP adapter interface.
 ;;
-;; Last updated: 2025-01-18 (consolidation session)
+;; Last updated: 2025-01-18 (v1.0.0 implementation session)
 
 (satellites
   (version "2.0.0")
@@ -75,7 +75,28 @@
       (language "Ada/SPARK")
       (status "implemented")
       (features "formal verification, contracts, SPARK proofs")
-      (note "Merged with noteg-ssg for dual-mode architecture")))
+      (note "Merged with noteg-ssg for dual-mode architecture"))
+
+    (satellite
+      (name "divisionone-ssg")
+      (url "https://github.com/hyperpolymath/divisionone-ssg")
+      (language "COBOL")
+      (status "implemented")
+      (features "IDENTIFICATION/DATA/PROCEDURE divisions, GnuCOBOL, enterprise-style"))
+
+    (satellite
+      (name "labnote-ssg")
+      (url "https://github.com/hyperpolymath/labnote-ssg")
+      (language "SciLab")
+      (status "implemented")
+      (features "embedded code execution, matrix computation, scientific publishing"))
+
+    (satellite
+      (name "milk-ssg")
+      (url "https://github.com/hyperpolymath/milk-ssg")
+      (language "COW")
+      (status "implemented")
+      (features "esoteric Brainfuck variant, MoO/MOo/Moo commands, HTML generation")))
 
   ;; ============================================================================
   ;; THEME/INTEGRATION SATELLITES
@@ -123,11 +144,6 @@
       (language "Welsh"))
 
     (satellite
-      (name "divisionone-ssg")
-      (url "https://github.com/hyperpolymath/divisionone-ssg")
-      (language "D"))
-
-    (satellite
       (name "doit-ssg")
       (url "https://github.com/hyperpolymath/doit-ssg")
       (language "Io"))
@@ -146,16 +162,6 @@
       (name "iota-ssg")
       (url "https://github.com/hyperpolymath/iota-ssg")
       (language "APL"))
-
-    (satellite
-      (name "labnote-ssg")
-      (url "https://github.com/hyperpolymath/labnote-ssg")
-      (language "Julia"))
-
-    (satellite
-      (name "milk-ssg")
-      (url "https://github.com/hyperpolymath/milk-ssg")
-      (language "Crystal"))
 
     (satellite
       (name "my-ssg")
@@ -278,9 +284,9 @@
   ;; STATISTICS
   ;; ============================================================================
   (statistics
-    (implemented-count 8)
+    (implemented-count 11)
     (theme-integration-count 3)
-    (pending-count 23)
+    (pending-count 20)
     (archived-count 8)
     (total-satellites 42))
 
