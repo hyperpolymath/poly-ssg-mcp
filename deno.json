@@ -24,7 +24,9 @@
     "fmt": "deno fmt --ignore=node_modules,lib",
     "res:build": "deno run -A npm:rescript build",
     "res:watch": "deno run -A npm:rescript build -w",
-    "res:clean": "deno run -A npm:rescript clean"
+    "res:clean": "deno run -A npm:rescript clean",
+    "test": "deno test --allow-read tests/",
+    "test:integration": "deno test --allow-read --allow-run tests/satellite_integration_test.js"
   },
   "compilerOptions": {
     "lib": ["deno.ns", "deno.unstable"]
