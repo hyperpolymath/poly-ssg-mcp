@@ -125,108 +125,148 @@
       (plugins ("consent"))))
 
   ;; ============================================================================
-  ;; PENDING IMPLEMENTATION
+  ;; ADDITIONAL IMPLEMENTED ENGINES (Session 2025-01-18)
   ;; ============================================================================
-  (pending
+  (implemented-v2
     (satellite
       (name "baremetal-ssg")
       (url "https://github.com/hyperpolymath/baremetal-ssg")
-      (language "Assembly"))
+      (language "x86-64 Assembly")
+      (status "implemented")
+      (features "direct syscalls, zero dependencies, minimal binary"))
 
     (satellite
       (name "befunge-ssg")
       (url "https://github.com/hyperpolymath/befunge-ssg")
-      (language "Befunge"))
+      (language "Befunge-93")
+      (status "implemented")
+      (features "2D esoteric language, program counter navigation"))
 
     (satellite
       (name "ddraig-ssg")
       (url "https://github.com/hyperpolymath/ddraig-ssg")
-      (language "Welsh"))
+      (language "Idris 2")
+      (status "implemented")
+      (features "dependent types, proofs, total functions"))
 
     (satellite
       (name "doit-ssg")
       (url "https://github.com/hyperpolymath/doit-ssg")
-      (language "Io"))
+      (language "Io")
+      (status "implemented")
+      (features "prototype-based OOP, message passing, concurrency"))
 
     (satellite
       (name "estate-ssg")
       (url "https://github.com/hyperpolymath/estate-ssg")
-      (language "Eiffel"))
+      (language "Eiffel")
+      (status "implemented")
+      (features "design by contract, preconditions, postconditions"))
 
     (satellite
       (name "gungir-ssg")
       (url "https://github.com/hyperpolymath/gungir-ssg")
-      (language "ReScript"))
+      (language "ReScript")
+      (status "implemented")
+      (features "type-safe, Deno runtime, functional style"))
 
     (satellite
       (name "iota-ssg")
       (url "https://github.com/hyperpolymath/iota-ssg")
-      (language "APL"))
+      (language "APL")
+      (status "implemented")
+      (features "array-oriented, symbolic operators, vectorized"))
 
     (satellite
       (name "my-ssg")
       (url "https://github.com/hyperpolymath/my-ssg")
-      (language "Janet"))
+      (language "Janet")
+      (status "implemented")
+      (features "Lisp-like, PEG parsing, embeddable"))
 
     (satellite
       (name "obli-ssg")
       (url "https://github.com/hyperpolymath/obli-ssg")
-      (language "Oberon"))
+      (language "Oberon")
+      (status "implemented")
+      (features "modular programming, Wirth-style, OBNC compiler"))
 
     (satellite
       (name "odd-ssg")
       (url "https://github.com/hyperpolymath/odd-ssg")
-      (language "Forth"))
+      (language "Forth")
+      (status "implemented")
+      (features "stack-based, concatenative, Gforth"))
 
     (satellite
       (name "orbital-ssg")
       (url "https://github.com/hyperpolymath/orbital-ssg")
-      (language "Orbit/WebAssembly"))
+      (language "Grain")
+      (status "implemented")
+      (features "functional, WebAssembly, pattern matching"))
 
     (satellite
       (name "parallax-ssg")
       (url "https://github.com/hyperpolymath/parallax-ssg")
-      (language "Chapel"))
+      (language "Chapel")
+      (status "implemented")
+      (features "parallel computing, domains, locales"))
 
     (satellite
       (name "pharos-ssg")
       (url "https://github.com/hyperpolymath/pharos-ssg")
-      (language "Pharo Smalltalk"))
+      (language "Pharo Smalltalk")
+      (status "implemented")
+      (features "live image, message passing, object-oriented"))
 
     (satellite
       (name "qed-ssg")
       (url "https://github.com/hyperpolymath/qed-ssg")
-      (language "Lean"))
+      (language "Lean 4")
+      (status "implemented")
+      (features "theorem prover, dependent types, tactics"))
 
     (satellite
       (name "rats-ssg")
       (url "https://github.com/hyperpolymath/rats-ssg")
-      (language "Ratfor"))
+      (language "Ratfor")
+      (status "implemented")
+      (features "C-like Fortran preprocessor, structured programming"))
 
     (satellite
       (name "rescribe-ssg")
       (url "https://github.com/hyperpolymath/rescribe-ssg")
-      (language "ReScript"))
+      (language "ReScript")
+      (status "implemented")
+      (features "type-safe JS output, pattern matching, immutable"))
 
     (satellite
       (name "saur-ssg")
       (url "https://github.com/hyperpolymath/saur-ssg")
-      (language "Saurus"))
+      (language "Squirrel")
+      (status "implemented")
+      (features "lightweight scripting, game heritage, dynamic typing"))
 
     (satellite
       (name "shift-ssg")
       (url "https://github.com/hyperpolymath/shift-ssg")
-      (language "Shift"))
+      (language "Wren")
+      (status "implemented")
+      (features "class-based, fiber concurrency, embeddable"))
 
     (satellite
       (name "terrapin-ssg")
       (url "https://github.com/hyperpolymath/terrapin-ssg")
-      (language "Logo"))
+      (language "Logo")
+      (status "implemented")
+      (features "turtle graphics heritage, educational, UCBLogo"))
 
     (satellite
       (name "wagasm-ssg")
       (url "https://github.com/hyperpolymath/wagasm-ssg")
-      (language "WebAssembly")))
+      (language "WebAssembly Text")
+      (status "implemented")
+      (features "pure WAT, memory operations, host imports")))
 
   ;; ============================================================================
   ;; ARCHIVED (merged or discontinued)
@@ -281,14 +321,15 @@
       (reason "Impractical - conceptual only")))
 
   ;; ============================================================================
-  ;; STATISTICS
+  ;; STATISTICS (Updated 2025-01-18)
   ;; ============================================================================
   (statistics
-    (implemented-count 11)
+    (implemented-count 31)  ;; 11 original + 20 new
     (theme-integration-count 3)
-    (pending-count 20)
+    (pending-count 0)
     (archived-count 8)
-    (total-satellites 42))
+    (total-satellites 42)
+    (languages-represented 31))
 
   ;; ============================================================================
   ;; AVAILABLE ADAPTERS (from hub)
