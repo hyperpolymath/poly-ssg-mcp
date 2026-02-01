@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: PMPL-1.0-or-later
 // SPDX-FileCopyrightText: 2025 Jonathan D.A. Jewell
 = SSG Repository Audit Report
 :toc: auto
@@ -131,7 +131,7 @@ All repos need `STATE.scm` at root with:
 [source,scheme]
 ----
 ;;; STATE.scm — {repo-name}
-;; SPDX-License-Identifier: AGPL-3.0-or-later
+;; SPDX-License-Identifier: PMPL-1.0-or-later
 (define metadata
   '((version . "0.1.0")
     (project . "{repo-name}")

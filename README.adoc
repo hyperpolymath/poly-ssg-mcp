@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: PMPL-1.0-or-later
 // SPDX-FileCopyrightText: 2025 Jonathan D.A. Jewell
 = polyglot-ssg-mcp
 :toc: macro
@@ -11,7 +11,7 @@ image:https://img.shields.io/badge/RSR-compliant-gold[RSR Compliant,link=https:/
 image:https://img.shields.io/badge/MCP-server-blue[MCP Server,link=https://github.com/modelcontextprotocol]
 image:https://img.shields.io/badge/SSGs-60+-blue[SSGs]
 image:https://img.shields.io/badge/Languages-50+-green[Languages]
-image:https://img.shields.io/badge/license-MIT-green[License]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 toc::[]
 
